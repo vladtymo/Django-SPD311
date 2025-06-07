@@ -1,0 +1,122 @@
+[
+    {
+        "model": "products.Product",
+        "pk": 1,
+        "fields": {
+            "name": "Wireless Mouse",
+            "description": "A high-precision wireless mouse with ergonomic design.",
+            "price": "29.99",
+            "stock": 120,
+            "created_at": "2025-06-01T10:00:00Z",
+            "updated_at": "2025-06-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 2,
+        "fields": {
+            "name": "Mechanical Keyboard",
+            "description": "RGB backlit mechanical keyboard with blue switches.",
+            "price": "89.50",
+            "stock": 60,
+            "created_at": "2025-06-02T12:00:00Z",
+            "updated_at": "2025-06-02T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 3,
+        "fields": {
+            "name": "27\" Monitor",
+            "description": "Ultra HD 4K monitor with HDR support.",
+            "price": "299.99",
+            "stock": 45,
+            "created_at": "2025-06-03T08:30:00Z",
+            "updated_at": "2025-06-03T08:30:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 4,
+        "fields": {
+            "name": "USB-C Hub",
+            "description": "7-in-1 USB-C hub for laptops and tablets.",
+            "price": "49.99",
+            "stock": 150,
+            "created_at": "2025-06-03T09:00:00Z",
+            "updated_at": "2025-06-03T09:00:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 5,
+        "fields": {
+            "name": "External SSD",
+            "description": "1TB portable SSD with USB 3.2 interface.",
+            "price": "139.99",
+            "stock": 80,
+            "created_at": "2025-06-04T14:15:00Z",
+            "updated_at": "2025-06-04T14:15:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 6,
+        "fields": {
+            "name": "Webcam 1080p",
+            "description": "Full HD webcam with microphone and auto-focus.",
+            "price": "59.95",
+            "stock": 95,
+            "created_at": "2025-06-04T16:00:00Z",
+            "updated_at": "2025-06-04T16:00:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 7,
+        "fields": {
+            "name": "Bluetooth Speaker",
+            "description": "Portable Bluetooth speaker with deep bass.",
+            "price": "39.90",
+            "stock": 130,
+            "created_at": "2025-06-05T10:45:00Z",
+            "updated_at": "2025-06-05T10:45:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 8,
+        "fields": {
+            "name": "Gaming Chair",
+            "description": "Ergonomic gaming chair with adjustable armrests.",
+            "price": "199.00",
+            "stock": 25,
+            "created_at": "2025-06-05T13:00:00Z",
+            "updated_at": "2025-06-05T13:00:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 9,
+        "fields": {
+            "name": "Smart Watch",
+            "description": "Water-resistant smartwatch with fitness tracking.",
+            "price": "119.99",
+            "stock": 70,
+            "created_at": "2025-06-06T09:20:00Z",
+            "updated_at": "2025-06-06T09:20:00Z"
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 10,
+        "fields": {
+            "name": "Noise-Cancelling Headphones",
+            "description": "Over-ear headphones with active noise cancellation.",
+            "price": "249.99",
+            "stock": 35,
+            "created_at": "2025-06-06T11:00:00Z",
+            "updated_at": "2025-06-06T11:00:00Z"
+        }
+    }
+]
