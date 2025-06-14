@@ -1,8 +1,6 @@
 import os
-from dotenv import load_dotenv
 from pathlib import Path
-
-load_dotenv()
+from pickle import TRUE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -105,8 +103,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # The secret key
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-nolgm78q4rpd&ha+gxy)nw7a4(jbrr5f&zt18%h%+7b2@o&@#p"  # os.environ.get("SECRET_KEY")
 
-DEBUG = bool(os.environ.get("DEBUG", default=1))
+DEBUG = TRUE  # bool(os.environ.get("DEBUG", default=1))
 
 ALLOWED_HOSTS = ["*"]
