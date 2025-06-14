@@ -8,6 +8,7 @@
     <thead class="table-dark">
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
@@ -16,8 +17,17 @@
     </thead>
     <tbody>
         {% for i in products %}
-        <tr>
+        <tr class="align-middle">
             <th scope="row">{{i.id}}</th>
+            <td>
+                {% if i.image %}
+                <img height="60" src="{{i.image.url}}" alt="{{i.name}}">
+                {% else %}
+                <img height="60"
+                    src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-picture-coming-creative-vector-png-image_40968940.jpg"
+                    alt="{{i.name}}">
+                {% endif %}
+            </td>
             <td>{{i.name}}</td>
             <td>{{i.price}}$</td>
             <td>{{i.stock}}</td>
