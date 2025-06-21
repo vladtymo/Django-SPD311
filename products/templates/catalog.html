@@ -3,6 +3,9 @@
 {% block content %}
 
 <h2>Product Catalog</h2>
+
+<a href="/create" class="btn btn-primary my-2">Create New Product</a>
+
 {% if products %}
 <table class="table table-striped">
     <thead class="table-dark">
@@ -38,6 +41,7 @@
         {% endfor %}
     </tbody>
 </table>
+<p class="text-center">Count: {{ count }}</p>
 {% else %}
 <p>No products available.</p>
 {% endif %}
