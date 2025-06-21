@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from products.forms.create import CreateProduct
 from products.forms.edit import EditProduct
 from products.models import Product
+from django.contrib import messages
 
 
 def index(request):
@@ -27,9 +28,13 @@ def create(request):
     if request.method == "POST":
         form = CreateProduct(request.POST, request.FILES)
 
-        form.save()
+        if form.is_valid():
+            form.save()
 
-        return redirect("/list")
+            messages.success(request, "Product created successfully!")
+            return redirect("/list")
+        else:
+            messages.error(request, "Invalid data!")
 
     return render(request, "create.html", {"form": form})
 
