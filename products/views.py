@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from products.forms.create import CreateProduct
+from products.forms.edit import EditProduct
 from products.models import Product
 
 
@@ -31,6 +32,25 @@ def create(request):
         return redirect("/list")
 
     return render(request, "create.html", {"form": form})
+
+
+def edit(request, id):
+    product = Product.objects.get(id=id)
+
+    if product is None:
+        return HttpResponse("Product not found")
+
+    form = EditProduct(instance=product)
+
+    if request.method == "POST":
+        form = EditProduct(request.POST, request.FILES, instance=product)
+
+        # TODO: delete old file
+
+        form.save()
+        return redirect("/list")
+
+    return render(request, "edit.html", {"form": form})
 
 
 def delete(request, id):

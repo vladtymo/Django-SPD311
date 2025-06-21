@@ -1,0 +1,45 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+
+<h2>Edit Product</h2>
+
+<form class="row g-3" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="col-md-6">
+        <label class="form-label">Name</label>
+        <input value="{{ form.name.value }}" type="text" name="name" class="form-control"
+            placeholder="Enter product name">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Price</label>
+        <input value="{{ form.price.value }}" type="number" name="price" class="form-control"
+            placeholder="Enter product price">
+    </div>
+    <div class="col-3">
+        <label class="form-label">Stock</label>
+        <input value="{{ form.stock.value }}" type="number" name="stock" min="0" class="form-control"
+            placeholder="Enter products in stock">
+    </div>
+
+    <div class="col-12">
+        <label class="form-label">Desccription</label>
+        <textarea class="form-control" name="description" rows="3"
+            placeholder="Enter products description">{{ form.description.value }}</textarea>
+    </div>
+
+    <div class="col-md-12">
+        <label for="inputCity" class="form-label">Image</label>
+        <input type="file" name="image" class="form-control">
+    </div>
+
+    <div class="col-6">
+        <button type="button" class="btn btn-dark w-100">Back</button>
+    </div>
+    <div class="col-6">
+        <button type="submit" class="btn btn-success w-100">Edit</button>
+    </div>
+</form>
+
+{% endblock %}
