@@ -4,6 +4,7 @@ from products.forms.create import CreateProduct
 from products.forms.edit import EditProduct
 from products.models import Product
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 
 def index(request):
@@ -14,8 +15,21 @@ def index(request):
 def catalog(request):
     products = Product.objects.all().order_by("id")
 
+    page_number = request.GET.get("page", 1)
+    page_size = request.GET.get("size", 5)
+
+    # Get the page object
+    page = Paginator(products, page_size).get_page(page_number)
+
     return render(
-        request, "catalog.html", {"products": products, "count": len(products)}
+        request,
+        "catalog.html",
+        {
+            "products": page.object_list,
+            "total_count": len(products),
+            "page": page,
+            "page_size": page_size,
+        },
     )
 
 
