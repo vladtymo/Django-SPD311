@@ -50,10 +50,17 @@ def edit(request, id):
     if request.method == "POST":
         form = EditProduct(request.POST, request.FILES, instance=product)
 
-        # TODO: delete old file
+        # If the product has an image, delete the old one
+        if request.FILES and product.image:
+            product.image.delete(save=False)
 
-        form.save()
-        return redirect("/list")
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, "Product updated successfully!")
+            return redirect("/list")
+        else:
+            messages.error(request, "Invalid data!")
 
     return render(request, "edit.html", {"form": form})
 
@@ -63,6 +70,9 @@ def delete(request, id):
         return HttpResponse("Invalid ID")
 
     itemToDelete = get_object_or_404(Product, pk=id)
+
+    if itemToDelete.image:  # Check if the product has an image
+        itemToDelete.image.delete(save=False)
 
     itemToDelete.delete()
 
