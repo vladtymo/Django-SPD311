@@ -24,12 +24,7 @@ def catalog(request):
     return render(
         request,
         "catalog.html",
-        {
-            "products": page.object_list,
-            "total_count": len(products),
-            "page": page,
-            "page_size": page_size,
-        },
+        {"products": page.object_list, "total_count": len(products), "page": page},
     )
 
 
