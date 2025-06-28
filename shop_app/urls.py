@@ -7,8 +7,9 @@ from products import views
 from shop_app import settings
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path("", include("products.urls")),
+    path("cart/", include("cart.urls")),
+    path("admin/", admin.site.urls),
 ]
 
 if settings.DEBUG:  # Only serve media files in development
