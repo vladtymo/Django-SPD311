@@ -23,7 +23,7 @@ def add(request, id, quantity=1):
     add_to_cart(request.session, id, quantity)
     messages.success(request, "Product added to cart!")
 
-    return redirect("/cart")
+    return redirect("/list")
 
 
 def clear(request):

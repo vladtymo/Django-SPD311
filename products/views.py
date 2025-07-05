@@ -8,8 +8,9 @@ from django.core.paginator import Paginator
 
 
 def index(request):
-    # products = Product.objects.all()
-    return render(request, "index.html")
+    products = Product.objects.all().order_by("id")
+
+    return render(request, "index.html", {"products": products})
 
 
 def catalog(request):
