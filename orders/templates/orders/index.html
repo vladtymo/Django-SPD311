@@ -1,0 +1,18 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<h1>Your Orders</h1>
+
+<ul class="list-group">
+    {% for i in orders %}
+    <li class="list-group-item">{{i.id}} - {{i.date}} - Total: {{i.total_price}}$ ordered by {{i.client.name}}</li>
+    {% endfor %}
+</ul>
+
+{% if orders|length == 0 %}
+<p>You have no orders yet!</p>
+<div>
+    <a href="/list" class="btn btn-primary mt-3">Continue Shoping</a>
+</div>
+{% endif %}
+{% endblock %}

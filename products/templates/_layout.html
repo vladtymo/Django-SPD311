@@ -35,7 +35,8 @@
                 </ul>
                 <div>
                     <a class="nav-link text-primary" href="/cart">
-                        <i class="bi bi-basket"></i> ({{ cart_count }})
+                        <i class="bi bi-basket"></i>
+                        {% if cart_count > 0 %}({{ cart_count }}){% endif %}
                     </a>
                 </div>
                 <form class="d-flex" role="search">
