@@ -8,8 +8,11 @@ from products.models import Product
 def index(request):
     items = get_cart(request.session)
     products = Product.objects.filter(id__in=items.keys())
+    total_price = sum(p.price for p in products)
 
-    return render(request, "cart/index.html", {"products": products})
+    return render(
+        request, "cart/index.html", {"products": products, "total": total_price}
+    )
 
 
 def add(request, id, quantity=1):

@@ -14,11 +14,12 @@
     <a href="/list" class="btn btn-primary mt-3">Continue Shoping</a>
 </div>
 {% else %}
-<div>
+<p class="text-center mt-2">Total: {{ total }}$</p>
+<div class="text-center">
     <a href="/orders/confirm/" class="btn btn-success mt-3">Confirm</a>
 </div>
-<div>
-    <a href="clear/" class="btn btn-secondary mt-3">Clear</a>
+<div class="text-center">
+    <a href="clear/" class="btn btn-outline-secondary mt-3">Clear</a>
 </div>
 {% endif %}
 {% endblock %}
