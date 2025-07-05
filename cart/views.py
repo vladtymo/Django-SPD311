@@ -15,7 +15,7 @@ def index(request):
     )
 
 
-def add(request, id, quantity=1):
+def add(request, id, quantity=1, return_url="/cart"):
     if Product.objects.get(id=id) is None:
         messages.error(request, "Product not found!")
         return redirect("/cart")
@@ -23,7 +23,7 @@ def add(request, id, quantity=1):
     add_to_cart(request.session, id, quantity)
     messages.success(request, "Product added to cart!")
 
-    return redirect("/list")
+    return redirect(return_url)
 
 
 def clear(request):
