@@ -25,8 +25,16 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/list">Admin</a>
+                        <a class="nav-link" href="/list">Products</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/orders">Orders</a>
+                    </li>
+                    {% endif %}
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="/cart">
                             <i class="bi bi-basket"></i>
@@ -39,10 +47,23 @@
                         {% if cart_count > 0 %}({{ cart_count }}){% endif %}
                     </a>
                 </div>
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
+                {% if user.is_authenticated %}
+                <div>
+                    <span class="align-middle">Hello, {{ user.username }} ({{ user.email }})</span>
+                    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-secondary" type="submit">Logout</button>
+                    </form>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button class="btn btn-outline-secondary">Login</button>
+                </a>
+                {% endif %}
             </div>
         </div>
     </nav>

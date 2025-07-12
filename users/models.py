@@ -16,9 +16,9 @@ class User(AbstractUser):
     avatar = models.ImageField(blank=True, null=True, upload_to="avatars/")
     role = models.IntegerField(choices=ROLE_CHOICES, default=0)
 
-    list_display = ("name", "email", "phone", "role")
-    search_fields = ("name", "email", "phone")
-    list_filter = "role"
+    # list_display = ("name", "email", "phone", "role")
+    # search_fields = ("name", "email", "phone")
+    # list_filter = "role"
 
     # override default table name
     # class Meta:

@@ -121,4 +121,7 @@ DEBUG = TRUE  # bool(os.environ.get("DEBUG", default=1))
 ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = "users.User"
-# Custom
+
+LOGIN_URL = "/login/"  # Where to go if not logged in
+LOGIN_REDIRECT_URL = "/"  # Where to go after login
+LOGOUT_REDIRECT_URL = "/"  # Optional if using LogoutView with next_page
