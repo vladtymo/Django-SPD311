@@ -1,5 +1,4 @@
 from django.db import models
-
 from users.models import User
 
 
@@ -13,4 +12,4 @@ class Order(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.date} - {self.total_price}$"

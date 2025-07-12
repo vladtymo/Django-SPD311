@@ -119,3 +119,6 @@ SECRET_KEY = "django-insecure-nolgm78q4rpd&ha+gxy)nw7a4(jbrr5f&zt18%h%+7b2@o&@#p
 DEBUG = TRUE  # bool(os.environ.get("DEBUG", default=1))
 
 ALLOWED_HOSTS = ["*"]
+
+AUTH_USER_MODEL = "users.User"
+# Custom

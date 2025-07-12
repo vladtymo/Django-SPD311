@@ -1,8 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
-class User(models.Model):
+class User(AbstractUser):
     ROLE_CHOICES = [
         (0, "Admin"),
         (1, "User"),
